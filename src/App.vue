@@ -55,7 +55,7 @@ export default {
 @media screen and (min-width: 800px){
 .grid-container{
   display: grid;
-  grid-template-columns: 67% 33%;
+  grid-template-columns: 68% 32%;
   grid-template-rows: auto auto auto;
 }
 .grid-left{
