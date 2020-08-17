@@ -1,10 +1,10 @@
 <template>
 
     <main>
-      <h1>Covid-19-Cases</h1>
-        <div class="weather-wrap">
-          <div class="Temperature">9</div>
-          <div class="Weather">Rain</div>
+      <div class="cases">Covid-19-Cases:</div>
+        <div class="weather-wrap" v-if="typeof corona.data != 'undefined'">
+          <div class="cases">Confirmed: {{corona.data[0].confirmed}}</div>
+          <div class="cases">Dead: {{corona.data[0].dead}}</div>
       </div>
     </main>
 
@@ -15,9 +15,20 @@ export default {
   name: 'corona',
   data() {
     return{
-      api_key: '8e5ff17cdbccda50197ace99031c1c5f'
+      corona:{}
     }
-  }
+  },
+  created(){
+    fetch(`https://www.trackcorona.live/api/cities/dortmund`)
+      .then(res => {
+        return res.json();
+      }).then(this.setResults);
+  },
+  methods:{
+  setResults (results){
+    this.corona = results;
+    console.log(this.corona.data)
+  }}
 }
 </script>
 
@@ -25,14 +36,21 @@ export default {
 <style scoped>
 * {
   text-align: center;
+  color:#000000;
+  font-weight: 900;
 }
 main{
-  background-color: rgba(255, 38, 0,0.9);
-  height:100%
+  background-image: url("../assets/corona.jpg");
+  background-size: cover;
 }
-.datum{
+.cases{
   font-size:2vw;
-  font-weight: 500;
-  text-shadow: 1px 3px rgba(0, 0, 0, 0.25)
+  font-weight: 900;
+  margin: 30px 100px;
+  display:inline-block;
+  padding: 10px 25px;
+  background-color:rgba(255, 255, 255, 0.4);
+  border-radius: 16px;
+
 }
 </style>
