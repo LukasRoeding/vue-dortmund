@@ -36,11 +36,15 @@ export default {
 </script>
 
 <style>
+#app{
+  background-color: rgba(219, 219, 219, 0.9);
+}
 .grid-container{
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: auto auto auto auto;
   background-color: rgba(219, 219, 219, 0.9);
+  margin-right:0px;
 }
 .grid-left{
   grid-column: 1;
@@ -68,6 +72,7 @@ export default {
   display: grid;
   grid-template-columns: 68% 32%;
   grid-template-rows: auto auto auto;
+  margin-right:10px;
 }
 .grid-left{
   grid-column: 1;

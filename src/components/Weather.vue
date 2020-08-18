@@ -1,7 +1,7 @@
 <template>
 
     <main>
-        <div class="datum">Monday, 17th August 2020</div>
+        <div class="datum">{{dateBuilder()}}</div>
         <div class="weather-wrap" v-if="typeof weather.main != 'undefined'">
           <div class="temp">{{Math.round(weather.main.temp)}}°C</div>
           <div class="weather">{{weather.weather[0].main}}</div>
@@ -31,7 +31,18 @@ export default {
   setResults (results){
     this.weather = results;
     console.log(this.weather)
-  }}
+  },
+  dateBuilder(){
+      let d = new Date();
+      let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+      let day = days[d.getDay()];
+      let date = d.getDate();
+      let month = months[d.getMonth()];
+      let year = d.getFullYear();
+      return `${day} ${date} ${month} ${year}`;
+  }
+  }
 }
 </script>
 
@@ -42,6 +53,7 @@ export default {
 
 }
 main{
+  margin-top:10px;
   background-image: url("../assets/wetter.jpg");
   background-size: cover;
   color:rgb(20, 20, 20);
@@ -57,7 +69,7 @@ main{
 }
 .temp{
   display:inline-block;
-  font-size:3vw;
+  font-size:2vw;
   padding: 10px 25px;
   background-color:rgba(255, 255, 255, 0.4);
   font-weight: 900;
@@ -69,7 +81,7 @@ main{
   font-weight: 900;
   margin-bottom: 50px;
   display:inline-block;
-  font-size:3vw;
+  font-size:2vw;
   padding: 10px 25px;
   background-color:rgba(255, 255, 255, 0.4);
   font-weight: 900;
