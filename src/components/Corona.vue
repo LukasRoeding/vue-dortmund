@@ -53,4 +53,16 @@ main{
   border-radius: 16px;
 
 }
+@media screen and (max-width: 1000px){
+  .cases{
+  font-size:3vw;
+  font-weight: 900;
+  margin: 30px 100px;
+  display:inline-block;
+  padding: 10px 25px;
+  background-color:rgba(255, 255, 255, 0.4);
+  border-radius: 16px;
+
+}
+}
 </style>

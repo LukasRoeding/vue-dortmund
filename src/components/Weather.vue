@@ -88,4 +88,36 @@ main{
   border-radius: 16px;
   margin: 30px 100px;
 }
+@media screen and (max-width: 1000px){
+  .datum{
+  display:inline-block;
+  font-size:3vw;
+  padding: 10px 25px;
+  background-color:rgba(255, 255, 255, 0.4);
+  font-weight: 900;
+  border-radius: 16px;
+  margin: 30px 0px;
+}
+  .temp{
+  display:inline-block;
+  font-size:3vw;
+  padding: 10px 25px;
+  background-color:rgba(255, 255, 255, 0.4);
+  font-weight: 900;
+  border-radius: 16px;
+  margin: 30px 100px;
+  color:rgb(0, 0, 0);
+}
+.weather{
+  font-weight: 900;
+  margin-bottom: 50px;
+  display:inline-block;
+  font-size:3vw;
+  padding: 10px 25px;
+  background-color:rgba(255, 255, 255, 0.4);
+  font-weight: 900;
+  border-radius: 16px;
+  margin: 30px 100px;
+}
+}
 </style>

@@ -50,7 +50,7 @@ export default {
   grid-column: 1;
   grid-row-end: 2;
   grid-row-start: 1;
-  font-size: 2vw;
+  font-size: 3vw;
   margin:0px 10px;
   margin-top:10px
 }

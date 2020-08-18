@@ -8,7 +8,7 @@
             The BVB does play today!
           </div>
           <div class="Text" v-else>
-            Der BVB does not play today!
+            The BVB does not play today!
           </div>
 
     </main>
@@ -55,5 +55,12 @@ main{
   margin:30px 0px;
   border-radius: 16px;
 }
-
+@media screen and (max-width: 1000px){
+  .Text{
+  font-size:3vw;
+  font-weight: 900;
+  margin:30px 0px;
+  border-radius: 16px;
+}
+}
 </style>
