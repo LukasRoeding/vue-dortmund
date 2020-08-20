@@ -19,12 +19,14 @@ export default {
     }
   },
   created(){
+    /**fetches corona data about dortmund */
     fetch(`https://www.trackcorona.live/api/cities/dortmund`)
       .then(res => {
         return res.json();
       }).then(this.setResults);
   },
   methods:{
+    /** corona object gets the fetched corona data */
   setResults (results){
     this.corona = results;
     console.log(this.corona.data)

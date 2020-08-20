@@ -22,16 +22,19 @@ export default {
     }
   },
   created(){
+    /**fetches the current weather data form dortmund */
     fetch(`${this.url_base}weather?q=${this.query}&units=metric&APPID=${this.api_key}`)
       .then(res => {
         return res.json();
       }).then(this.setResults);
   },
   methods:{
+    /** applies the fetched weather data to the weather object */
   setResults (results){
     this.weather = results;
     console.log(this.weather)
   },
+  /** gathers the current day, date, month and year and outputs them together as a string */
   dateBuilder(){
       let d = new Date();
       let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];

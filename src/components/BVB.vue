@@ -20,11 +20,13 @@ export default {
   name: 'bvb',
   data() {
     return{
+      /** array containing the next gamedates */
       games: ["Friday 11 September 2020", "Saturday 19 September 2020"],
     }
   },
   created(){},
   methods:{
+  /** gathers the current day, date, month and year and outputs them together as a string */
   dateBuilder(){
       let d = new Date();
       let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
